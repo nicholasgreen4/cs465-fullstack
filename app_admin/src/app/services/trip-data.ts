@@ -45,11 +45,11 @@ export class TripData {
   }
 
   getTrips() : Observable<Trip[]> {
-    return this.http.get<Trip[]>(this.baseUrl);
+    return this.http.get<Trip[]>(`${this.baseUrl}/trips`);
   }
 
   addTrip(formData: Trip) : Observable<Trip> {
-    return this.http.post<Trip>(this.baseUrl, formData);
+    return this.http.post<Trip>(`${this.baseUrl}/trips`, formData);
   }
 
   getTrip(tripCode: string) : Observable<Trip[]> {
